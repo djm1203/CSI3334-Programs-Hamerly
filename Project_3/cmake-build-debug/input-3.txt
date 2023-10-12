@@ -1,0 +1,11 @@
+i hello
+i this
+i is
+i a
+i test
+i my
+i name
+i derek
+e 'hello my name is derek'
+e 'this is a test'
+q
