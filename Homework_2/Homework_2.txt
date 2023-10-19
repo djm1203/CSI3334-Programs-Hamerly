@@ -1,0 +1,74 @@
+	Derek Martinez
+	CSI 3334
+	Section 01
+	September 9, 2023
+
+		Homework_2
+
+	1)
+		void swapNodes(){
+			Node *p = B;
+			Node *tmp = B->next; //store B
+			
+			B->next = B->next->next; //point to C
+			tmp->next = D->next; //move C to after D
+			D->next = tmp; //make D point to C
+		}
+	
+	2)
+		I)
+		unsigned int f1(unsigned int m, unsigned int n){
+			unsigned int s = 0;				//c1	1
+			for(unsigned int i = 0;				//c2	1
+				i < 2 * m;				//c3	2m + 1
+				i++)					//c4	2m
+				for(unsigned int j = n;			//c5	2m
+					j > 0;				//c6	2m(n + 1)
+					j--)				//c7	2m(n)
+					s += i * j;			//c8	2m(n)
+			return s;					//c9	1
+		}
+		
+		a) T(m, n) = c1 * 1 + c2 * 1 + c3 * 2m+2 + c4 * 2m + c5 * 2m + c6 * 2m(n+1) + c7 * 2m(n) + c8 * 2m(n) + c9 * 1
+		b) O(m,n) = O(m*n)
+		
+		II)
+		unsigned int f2(unsigned int n){
+			unsigned i = 1;					//c1	1
+			for(unsigned int j = 1;				//c2	1
+				j <= n;					//c3	n + 1
+				j++)					//c4	n
+				for(unsigned int k = 1;			//c5	n
+					k <= n;				//c6	(n+1) * log(n)
+					k *= 2;				//c7	nlog(n)
+					i = i * j;			//c8	nlog(n)
+			return i;					//c9	1
+		a) T(n) = c1 * 1 + c2 * 1 +c3 * n+1 + c4 * n + c5 * 1 + c6 * n(n+1) + c7 * n(log(n)) + c8 * n(log(n)) + c9 * 1
+		b) O(n) = O(nlog(n))
+
+	3) An algorithm takes 0.5 ms for input size 100. How long will it take for input size
+	500 if the running time is the following (assume low-order terms are negligible)?
+		a) linear -> (100/0.5ms) = (500/x)
+				x = 2.5ms
+		b) O(NlogN) -> 100*log(100)/0.5ms = 500*log(500)/x
+				x = 3.37ms
+		c) quadratic -> 100^2/0.5ms = 500^2/x
+				x = 12.5ms
+		d) cubic -> 100^3/0.5ms = 500^3/x
+				x = 62.5ms
+
+	4) On seperate PNG
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
